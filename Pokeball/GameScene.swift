@@ -157,41 +157,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     //Restart Game
                     
                     self.removeAllChildren()
-                    title()
-                    label()
+//                    self.childNode(withName: "mon")?.removeFromParent()
+//                    self.childNode(withName: "rocket")?.removeFromParent()
+//                    self.childNode(withName: "ash")?.removeFromParent()
                     yourScore?.removeFromParent()
-                    self.removeAllActions()
+//                    startTimers()
+//                    self.removeAllActions()
                     self.scene?.removeFromParent()
                     scene?.isPaused = false
                     yourScore?.removeFromParent()
                     score = 0
                     scoreLabel?.text = "Score: \(score)"
-                    background ()
+//                    background ()
                     scoreLabel = childNode(withName: "scoreLabel") as? SKLabelNode
-                    startTimers()
-                    createPokeball()
+//                    createPokeball()
                 }
                 
             }
         }
-    }
-    
-    func removeRocket() {
-        // Remove all sprites named "stars"
-        self.enumerateChildNodes(withName: "rocket") {
-            node, stop in
-            node.removeFromParent();
-        }
-        
-    }
-    
-    func removeMon() {
-        // Remove all sprites named "stars"
-        self.enumerateChildNodes(withName: "pikachu") {
-            node, stop in
-            node.removeFromParent();
-        }
-        
     }
     
     override func didSimulatePhysics() {
